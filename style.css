@@ -11,14 +11,13 @@ body {
     gap: 20px;
 }
 
-#divContainer {
+#container {
     width: 600px;
     height: 600px;
     display: flex;
     flex-direction: column;
     border: 1px solid #000;
 }
-
 
 .flexContainer {
     transition: 0s 180s;
