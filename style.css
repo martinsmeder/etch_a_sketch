@@ -9,32 +9,29 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    /* Prevent dragging/selecting from causing bugs */
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 #container {
     width: 600px;
     height: 600px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     border: 1px solid #000;
 }
 
-.flexContainer {
-    transition: 0s 180s;
-    display: flex;
-    width: 100%;
-    height: 100%; 
-}
-
-.flexItem {
+.gridItem {
     transition: 0s 60s;
-    display: flex;
     width: 100%;
     height: 100%; 
 }
 
-.flexItem:hover {
-    background: #000;
+.gridItem:hover {
+    background-color: #FFF;
     transition: 0s;
 }
 
