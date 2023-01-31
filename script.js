@@ -1,7 +1,7 @@
 let currentColor = '#333333'
 let currentMode = 'color'
 
-const container = document.querySelector('#container');
+const divContainer = document.querySelector('#divContainer');
 const colorPicker = document.querySelector('#picker')
 const colorBtn = document.querySelector('#color');
 const rainbowBtn = document.querySelector('#rainbow');
@@ -10,7 +10,6 @@ const eraserBtn = document.querySelector('#eraser');
 const clearBtn = document.querySelector('#clear');
 const gridSlider = document.querySelector('#slider');
 let sliderOutput = document.querySelector('#output');
-sliderOutput.textContent = `${gridSlider.value} x ${gridSlider.value}`;
 
 colorBtn.addEventListener('click', () => {
   setCurrentMode('color')
@@ -27,28 +26,33 @@ eraserBtn.addEventListener('click', () => {
 colorPicker.addEventListener('change', (e) => {
   setCurrentColor(e.target.value)
 });
-clearBtn.addEventListener('click', clearGrid)
-gridSlider.addEventListener('mouseup', changeGridSize)
+clearBtn.addEventListener('click', clearGrid);
+gridSlider.addEventListener('mouseup', changeGridSize);
+gridSlider.addEventListener('mousemove', showGridSize);
+
 
 function createGrid(size) {
     // clear grid
-    container.replaceChildren();
+    divContainer.replaceChildren();
     
-    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    divContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    divContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     
     for (let i = 0; i < size * size; i++) {
         const gridItem = document.createElement("div");
         gridItem.classList.add('gridItem');
         gridItem.addEventListener('mouseover', changeColor)
         gridItem.addEventListener('mousedown', changeColor)
-        container.appendChild(gridItem);
+        divContainer.appendChild(gridItem);
     }  
 };
 
 function changeGridSize() {
-    sliderOutput.textContent = `${gridSlider.value} x ${gridSlider.value}`;
     createGrid(gridSlider.value)
+}
+
+function showGridSize() {
+  sliderOutput.textContent = `${gridSlider.value} x ${gridSlider.value}`;
 }
 
 function clearGrid() {
@@ -97,3 +101,4 @@ function changeColor(e) {
 }
 
 createGrid(16);
+showGridSize();

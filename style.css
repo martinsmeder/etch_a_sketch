@@ -5,10 +5,15 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: 'Indie Flower', cursive;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr 4fr 1fr; 
     gap: 20px;
+    margin-left: 25px;
+    background-color: #000;
+    color: #FFF;
     /* Prevent dragging/selecting from causing bugs */
     -webkit-user-drag: none;
     user-select: none;
@@ -17,21 +22,92 @@ body {
     -ms-user-select: none;
 }
 
-#container {
+header {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    text-shadow: 0 0 .9rem #FFF;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    gap: 20px;
+}
+
+footer {
+    grid-column: 1 / 3;
+    grid-row: 3 / 3;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 .9rem #FFF;
+    font-size: 2rem;
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+button {
+    /* font-family: 'Indie Flower', cursive; */
+    font-family: 'Amatic SC', cursive;
+    width: 170px;
+    height: 40px;
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+#buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 .5rem #FFF;
+}
+
+#colorPicker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#colorPicker input {
+    width: 80px;
+    height: 35px;
+}
+
+#sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sliderContainer input {
+    width: 170px;
+    height: 35px;
+}
+
+#divContainer {
     width: 600px;
     height: 600px;
     display: grid;
-    border: 1px solid #000;
+    background-color: #FFF;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    box-shadow: 0 0 .7rem #FFF;
 }
 
 .gridItem {
-    transition: 0s 60s;
     width: 100%;
-    height: 100%; 
-}
-
-.gridItem:hover {
-    background-color: #FFF;
-    transition: 0s;
+    height: 100%;    
 }
 
