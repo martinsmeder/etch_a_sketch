@@ -92,11 +92,11 @@ function changeColor(e) {
     if (currentMode === 'rainbow') {
         e.target.style.backgroundColor = randomColor();
       } else if (currentMode === 'color') {
-        e.target.style.backgroundColor = currentColor
+        e.target.style.backgroundColor = currentColor;
       } else if (currentMode === 'black') {
-        e.target.style.backgroundColor = '#000'
+        e.target.style.backgroundColor = '#000';
       } else if (currentMode === 'eraser') {
-        e.target.style.backgroundColor = '#FFF'
+        e.target.style.backgroundColor = '#FFF';
       }; 
 };
 
