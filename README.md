@@ -4,10 +4,3 @@
 Live demo: https://martinsmeder.github.io/etch_a_sketch/
 
 A browser based version of something between a sketchpad and Etch-A-Sketch.
-
-Some things I've learned:
-* How to create a grid of equally sized divs using a for loop and DOM methods
-* How to implement a slider that can change the size of said grid
-* Basic use of function callbacks
-* How to change the color of the divs on mousedown instead of hover
-* How to implement a colorpicker
